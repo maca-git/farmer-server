@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import usersRoutes from './routes/users';
+import itemsRoutes from './routes/items';
 
 const app = express();
 
@@ -15,7 +16,8 @@ app
   .use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/users', usersRoutes);
-app.get('/', (req, res) => res.send('Welcome to the Money API!'));
+app.use('/items', itemsRoutes);
+app.get('/', (req, res) => res.send('Welcome to the Farmer API!'));
 
 mongoose.connect(
   CONNECTION_URL,

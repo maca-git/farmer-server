@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import usersRoutes from './routes/users';
 import itemsRoutes from './routes/items';
+import areasRoutes from './routes/areas';
 
 const app = express();
 
@@ -17,6 +18,7 @@ app
 
 app.use('/users', usersRoutes);
 app.use('/items', itemsRoutes);
+app.use('/areas', areasRoutes);
 app.get('/', (req, res) => res.send('Welcome to the Farmer API!'));
 
 mongoose.connect(

@@ -5,6 +5,7 @@ import cors from 'cors';
 import usersRoutes from './routes/users';
 import itemsRoutes from './routes/items';
 import areasRoutes from './routes/areas';
+import warehouseRoutes from './routes/warehouse';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app
 app.use('/users', usersRoutes);
 app.use('/items', itemsRoutes);
 app.use('/areas', areasRoutes);
+app.use('/warehouse', warehouseRoutes);
 app.get('/', (req, res) => res.send('Welcome to the Farmer API!'));
 
 mongoose.connect(

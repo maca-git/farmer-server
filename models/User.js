@@ -13,6 +13,16 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  coins: {
+    type: Number,
+    required: true,
+    default: 10000,
+  },
+  level: {
+    type: Number,
+    required: true,
+    default: 1,
+  },
 });
 
 const User = mongoose.model('User', userSchema);

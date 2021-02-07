@@ -15,6 +15,7 @@ export const createItem = async (req, res) => {
     const item = new Item({
       name: req.body.name,
       category: req.body.category,
+      imgUrl: req.body.imgUrl,
       buyPrice: req.body.buyPrice,
       ripeningTime: req.body.ripeningTime,
       ripeningsCount: req.body.ripeningsCount,
@@ -32,6 +33,7 @@ export const updateItem = async (req, res) => {
   const {
     name,
     category,
+    imgUrl,
     buyPrice,
     ripeningTime,
     ripeningsCount,
@@ -44,6 +46,7 @@ export const updateItem = async (req, res) => {
   const updatedItem = {
     name,
     category,
+    imgUrl,
     buyPrice,
     ripeningTime,
     ripeningsCount,
